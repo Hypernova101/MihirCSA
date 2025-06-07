@@ -11,17 +11,41 @@ breadcrumb: /tools
 breadcrumbs: True 
 ---
 
+## Git Identification
+
+Set up your personal GitHub variables to ensure your commits are associated with your GitHub account. This is required before syncing code to GitHub. These configurations are essential for tracking contributions and collaborating effectively.
+
+1. **Set your email address**: Use the email associated with your GitHub account.
+
+```bash
+git config --global user.email "youremail@gmail.com"
+```
+
+2. **Set your GitHub user.name**: Use your GitHub ID..
+
+```bash
+git config --global user.name yourGHID 
+```
+
+3. Verify your configurations:
+
+```bash
+git config --global --list
+```
+
+This command will display your global Git configurations, including the email and username you just set. If there are any errors, repeat the `git config` commands to correct them.
+
+---
+
 ## Starting a Project
 
 The following commands are universal for all machine types, terminals, and projects. The previous installation steps ensured that all machine types have compatible tools. Follow these steps in order:
 
-### Open a Linux-supported Terminal (Ubuntu, Kali, MacOS).
+1. **Open a Linux-supported Terminal**.
 
-### Move to your home directory: `cd`
+2. **Move to your home directory**: `cd`
 
-### Setup a directory for projects 
-
-Change **open-coding-society/student.git** to match the name of your organization and repo.
+3. **Setup a directory for projects:**
 
    ```bash
    mkdir -p opencs
@@ -29,32 +53,38 @@ Change **open-coding-society/student.git** to match the name of your organizatio
    git clone https://github.com/open-coding-society/student.git
    ```
 
-### Prepare project prior to opening VS Code
+4. **Prepare project prior to opening VS Code:**
 
    ```bash
    # Move to the project directory
    cd student
    # Create a virtual environment using the provided script
-   ./scripts/venv.sh
+   scripts/venv.sh
    # Activate the virtual environment (observe the prompt change)
    source venv/bin/activate
-   # Install Ruby gems, Jekyll required (GitHub Pages)
+   # Install Python packages for the project
+   pip install -r requirements.txt
+   # Verify Jupyter kernels, ensure python3 is listed
+   jupyter kernelspec list
+   # Install Ruby gems required for Jekyll (GitHub Pages)
    bundle install
    # Open the project in VS Code
    code .
    ```
 
-### Authenticate with GitHub
+5. Authenticate with GitHub:
 
-* At some point, you may be prompted to authenticate with GitHub. Follow the dialog and instructions.
-* **KASM** A keyring may appear; ensure you authenticate. Using credentials similar to GitHub should work.
+   * At some point, you may be prompted to authenticate with GitHub. Follow the dialog and instructions.
+   * **KASM** A keyring may appear; ensure you authenticate. Using credentials similar to GitHub should work.
 
-### For WSL Users Only
+6. For WSL Users Only:
 
-* Ensure that VS Code is opened in WSL. Check the bottom-left corner of the VS Code window to confirm. This is critical for success!
+   * Ensure that VS Code is opened in WSL. Check the bottom-left corner of the VS Code window to confirm. This is critical for success!
    ![wsl]({{ site.baseurl }}/images/notebooks/foundation/wsl.jpg)
 
 ---
+
+<br>
 
 ## Software Development Life Cycle (SDLC)
 
@@ -77,29 +107,7 @@ The development cycle involves iterative steps of running the server, making cha
 
 All students are building a GitHub Pages website.  These steps get your website running on your desktop (local or cloud).
 
-#### What is `make`?
-
-Think of `make` as a smart **task helper** for developers.
-
-* It **automates commands** you would normally type one by one.
-* It reads a special file called a **Makefile**, which lists tasks and how to run them.  
-
-Instead of running:
-
-```bash
-bundle exec jekyll serve
-python my_script.py
-```
-
-Just run:
-
-```bash
-make
-```
-
-And it will do everything listed in the `Makefile`.
-
-1. Open a terminal
+1. Open a terminal 
 
 2. Navigate to your project directory `cd ~/opencs/portfolio/student`
 

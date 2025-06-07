@@ -1,9 +1,9 @@
-title: Mihir Bapat
-description: "Class of 2027"
-owner_name: Mihir Bapat
-github_username: Hypernova101 
-github_repo: "MihirCSA" 
-baseurl: "/MihirCSA" 
+title: Open Coding 
+description: "Class of 2025"
+owner_name: John Mortensen
+github_username: jm1021 
+github_repo: "pages" 
+baseurl: "" 
 future: true
 remote_theme: jekyll/minima
 minima:
@@ -16,7 +16,9 @@ plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 header_pages:
+  - navigation/section/csse.md
+  - navigation/section/csp.md
+  - navigation/section/csa.md 
   - navigation/blog.md
   - navigation/search.md
-  - navigation/about.md
   - navigation/logintoolkit.md
