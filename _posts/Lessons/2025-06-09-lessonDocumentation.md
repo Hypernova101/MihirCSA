@@ -1,12 +1,11 @@
 ---
 layout: lesson 
-show_reading_time: true
+show_reading_time: false
 permalink: /lessoncreation
 title: How to Create a Lesson
 video_url: "https://www.youtube.com/watch?v=4nE7MBTV7nQ"
 flashcards: lesson_flashcard
 categories: ['Lesson']
-author: Mihir Bapat, Kiruthic Selvakumar, Shawn Ray
 ---
 
 <div id="lesson-content">
@@ -47,7 +46,6 @@ hack_prompt: Write a function that adds two numbers.
 permalink: /functions
 flashcard: functions_flashcard
 game: functions_game
-category: ['Lesson']
 </code></pre>
 
   <p>You’ll customize this file every time you create a new lesson.</p>
