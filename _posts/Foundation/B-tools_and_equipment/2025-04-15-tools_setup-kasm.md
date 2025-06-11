@@ -16,85 +16,60 @@ breadcrumb: True
 Welcome to your journey of setting up your Operating System and Tools! This setup process will guide you through working in a Linux terminal, managing folders, cloning a project, and adding packages.
 
 ## Visual Representation of the Workflow
-
-```mermaid
-flowchart TD
-    A["💻 Open Terminal"] 
-    B["> Linux Commands<br>mkdir, cd, ls"]
-    C["📁 Clone Project<br>git clone https://<your-repo>"]
-    D["🛠️ Activate Tools<br>Ruby, Python, Git"]
-    E["🔄 SDLC<br>code->make->test->commit"]
-
-    A --> B --> C --> D --> E
+```text
++-------------------+       +-------------------+       +-------------------+       +-------------------+       +-------------------+
+|                   |       |                   |       |                   |       |                   |       |                   |
+|  Linux Terminal   | ----> |  Shell Commands   | ----> |   Clone Project   | ----> |  Package Manager  | ----> |       SDLC        |
+|                   |       |                   |       |                   |       |                   |       |                   |
++-------------------+       +-------------------+       +-------------------+       +-------------------+       +-------------------+
+        |                           |                           |                           |                            |
+        v                           v                           v                           v                            v
+  Open Terminal              Terminal/Folder Mgmt         Clone the project          Set up and configure       Establish a development
+                             Files and Folders            repository from            the tools required              workflow 
+                                Management                version control             (Ruby, Python)               (SDLC) phases
 ```
 
 ## Shell Commands
 
-* KASM (Linux): `ls`, `pwd`, `mkdir`, `cd`, `git`, `cat`
+- KASM (Linux): `ls`, `pwd`, `mkdir`, `cd`, `git`, `cat`
 
 ## Version Control Commands
 
-* **git clone**: Make a working copy of a git repository from the cloud to your local machine.
-* **git pull**: Update your local copy of the repository with changes from the cloud repository.
-* **git commit**: Save changes to files in your local repository.
-* **git push**: Send updates from your local repository to the remote repository.
+- **git clone**: Make a working copy of a git repository from the cloud to your local machine.
+- **git pull**: Update your local copy of the repository with changes from the cloud repository.
+- **git commit**: Save changes to files in your local repository.
+- **git push**: Send updates from your local repository to the remote repository.
 
 ## Package Manager Commands – Ubuntu (apt)
 
-* **Update package list:** `sudo apt update`
-* **Upgrade installed packages:** `sudo apt upgrade`
-* **Install a package:** `sudo apt install <package_name>`
-* **Remove a package:** `sudo apt remove <package_name>`
-* **Search for a package:** `apt search <package_name>`
-* **List installed packages:** `apt list --installed`
+- **Update package list:** `sudo apt update`
+- **Upgrade installed packages:** `sudo apt upgrade`
+- **Install a package:** `sudo apt install <package_name>`
+- **Remove a package:** `sudo apt remove <package_name>`
+- **Search for a package:** `apt search <package_name>`
+- **List installed packages:** `apt list --installed`
 
 ---
 
-## KASM Workspace Setup (Ubuntu Noble / Kali)
+## KASM Workspace Setup
 
-Thanks to improvements in the KASM image, getting started is fast and simple.
-
-Open a Terminal
-
-### First-time setup
+The KASM Workspace already includes most tools. Just run the setup script.
 
 ```bash
-mkdir opencs
-cd opencs
-git clone https://github.com/Open-Coding-Society/student.git
-cd student/
-./scripts/activate.sh # prompts for Git UID and Personal Email
-./scripts/venv.sh
-code .
+cd
+mkdir opencs 
+cd opencs 
+git clone https://github.com/open-coding-society/pages.git
+cd opencs/pages/scripts
+./activate.sh
 ```
 
 ---
 
-### Version Checks (Optional)
-
-Open a new Terminal
-
+## Version Checks
 ```bash
-python --version
-pip --version
 ruby -v
 bundle -v
-gem --version
-git config --global --list
+python --version
+jupyter --version
 ```
-
-#### Starting a session to work in VSCode
-
-Open a new Terminal
-
-Each time you open a new Terminal to work, run:
-
-```bash
-cd opencs/student
-source venv/bin/activate # activate Python virtual environment
-code .
-```
-
----
-
-{% include slim_sidebar.html %}

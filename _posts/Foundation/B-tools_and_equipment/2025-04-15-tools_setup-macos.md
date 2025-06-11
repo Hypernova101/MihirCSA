@@ -15,22 +15,22 @@ breadcrumb: True
 Welcome to your journey of setting up your Operating System and Tools! This setup process will guide you through working in a Linux terminal, managing folders, cloning a project, and adding packages. This is a fundamental skill for any developer or cyber security expert.
 
 ## Visual Representation of the Workflow
-
-```mermaid
-flowchart TD
-    A["💻 Open Terminal"] 
-    B["> Linux Commands<br>mkdir, cd, ls"]
-    C["📁 Clone Project<br>git clone https://<your-repo>"]
-    D["🛠️ Activate Tools<br>Ruby, Python, Git"]
-    E["🔄 SDLC<br>code->make->test->commit"]
-
-    A --> B --> C --> D --> E
+```text
++-------------------+       +-------------------+       +-------------------+       +-------------------+       +-------------------+
+|                   |       |                   |       |                   |       |                   |       |                   |
+|  Linux Terminal   | ----> |  Shell Commands   | ----> |   Clone Project   | ----> |  Package Manager  | ----> |       SDLC        |
+|                   |       |                   |       |                   |       |                   |       |                   |
++-------------------+       +-------------------+       +-------------------+       +-------------------+       +-------------------+
+        |                           |                           |                           |                            |
+        v                           v                           v                           v                            v
+  Open Terminal              Terminal/Folder Mgmt         Clone the project          Set up and configure       Establish a development
+                             Files and Folders            repository from            the tools required              workflow 
+                                Management                version control             (Ruby, Python)               (SDLC) phases
 ```
 
 ## Shell Commands
 
 You’ll use standard Unix shell commands:
-
 - MacOS: `ls`, `pwd`, `mkdir`, `cd`, `git`, `cat`
 
 ## Version Control Commands
@@ -52,56 +52,50 @@ You’ll use standard Unix shell commands:
 
 ## MacOS Setup
 
-### 1. Install Homebrew
+### Install VS Code and Homebrew
 
-Open a MacOS **Terminal** (keep it in the Dock for easy access).  
-Follow the instructions on [Homebrew Install](https://brew.sh/).  
+1. **Install VS Code**  
+   [VS Code link and instructions]
 
-### 2. Install VS Code
+2. **Install Homebrew**  
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-Download and install [VS Code](https://code.visualstudio.com/download) for Mac.  
+3. **Verify Installation**  
+   ```bash
+   brew --version
+   ```
 
-### 3. First-time Setup
+---
 
-⚠️ Run these commands **one line at a time** in Terminal.
+## Install Developer Tools
 
 ```bash
-mkdir opencs
-cd opencs
-git clone https://github.com/Open-Coding-Society/student.git
-cd student/
-./scripts/activate_macos.sh
-./scripts/activate.sh # prompts for Git UID and Personal Email
-./scripts/venv.sh
+cd
+mkdir opencs 
+cd opencs 
+git clone https://github.com/open-coding-society/pages.git
+cd opencs/pages/scripts
+./activate_macos.sh
 ```
 
-#### Setup Checks (Optional)
-
-Open a new MacOS "terminal" by clicking Terminal Icon in Dock
-
-You can always come back to these checks later if your tools stop working.
+### Custom MacOS Steps
 
 ```bash
-python --version
-pip --version
-ruby -v
-bundle -v
-gem --version
-git config --global --list
-```
-
-#### Starting a session to work in VSCode
-
-Open a new MacOS "terminal"
-
-Each time you open a new Terminal to work, run:
-
-```bash
-cd opencs/student
-source venv/bin/activate # activate Python virtual environment
-code .
+ln -sF /opt/homebrew/share/jupyter/nbconvert ~/Library/Jupyter
+sudo ln -sF /opt/homebrew/bin/python3.12 /usr/local/bin/python
+sudo ln -sF /opt/homebrew/bin/pip3.12 /usr/local/bin/pip
 ```
 
 ---
 
-{% include slim_sidebar.html %}
+## Version Checks
+```bash
+ruby -v
+bundle -v
+python --version
+jupyter --version
+```
+
+---
