@@ -1,14 +1,13 @@
 ---
-toc: False
-layout: tailwindPost
+layout: post
+title: Website Development
 infoGraph: webdev_infograph
-title: Website Development Foundations
-description: This guide introduces the foundational concepts in web development—from setting up your About Me site, documenting your tools and workflow, and talking and extracting data from servers. You'll learn how to publish with GitHub Pages and create a central homepage to organize your developer journey, as well as thinking about future possibilities.
-categories: ['DevOps']
+description: How to do website developmend
+categories: ['GitHub Pages']
 permalink: /web-dev
-type: ccc
-sticky_rank: 1
+menu: nav/github_pages.html
+toc: True
+comments: True
 ---
-
 
 {%- include tailwind/infograph.html -%}
