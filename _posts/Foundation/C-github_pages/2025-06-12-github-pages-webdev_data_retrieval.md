@@ -2,105 +2,69 @@
 toc: True
 layout: post
 data: web-dev
-title: Data Retrieval Foundations
-description: Discover how full-stack applications deliver live data to users by connecting frontend interfaces with backend servers and databases. Learn to build dynamic web pages that fetch and display real information in real time.
+title: Data Storage Foundations
+description: In this guide, you'll learn about why data storage is used and what you can do to store data in your own projects!
 categories: ['GitHub Pages']
-permalink: /web-dev/data-retrieval
-breadcrumb: True
+permalink: /web-dev/data-storage
 ---
+
+# Data Storage Foundations
 
 ## Overview
 
-In this tutorial, you’ll learn how the **frontend** and **backend** of a website work together to retrieve, display, and interact with data. This is the foundation of **full-stack development**.
+In this session, you will:
+- Understand why **data storage** is essential in web applications
+- Explore common database types
+- Use Flask and Spring to connect and interact with a database
+- Learn the basics of data persistence and retrieval
+- Deploy simple backend apps that store and retrieve information
 
-By the end, you will:
-- Understand how frontends request data from a backend
-- Build a basic API route to send and receive data
-- Connect your JavaScript frontend to Flask or Spring backend
-- Display live data on a webpage
-
----
-
-## What Is Full Stack?
-
-A **full stack** app includes:
-- **Frontend**: What users see (HTML/CSS/JavaScript)
-- **Backend**: Logic and data management (Flask or Spring)
-- **Database**: Where the data lives (e.g., SQLite, PostgreSQL)
-
-These parts communicate using **HTTP requests** (e.g., `GET`, `POST`) via **APIs**.
+At the conclusion of this session, you will have the foundations to begin:
+- Python API Development using Flask
+- Java API Development using Spring
 
 ---
 
-## Step 1: Create a Data Endpoint
+## Why Data Storage?
 
-Use your backend (Flask or Spring) to expose data through an API.
+Web apps need to **remember things** — user input, scores, blog posts, etc.  
+This memory is managed using databases.
 
-### Flask Example (`/api/data`):
-```python
-@app.route('/api/data')
-def get_data():
-    return jsonify({"name": "Alex", "score": 42})
-```
+### Data Storage Is Needed For:
+- Saving form data or login info
+- Storing game progress or scores
+- Building blogs, dashboards, or user profiles
+- Creating APIs that serve real-time data
 
-### Spring Example:
-```java
-@RestController
-public class DataController {
-  @GetMapping("/api/data")
-  public Map<String, Object> getData() {
-    return Map.of("name", "Alex", "score", 42);
-  }
-}
-```
+### Common Storage Applications:
+- **Relational Databases** like SQLite and PostgreSQL
+- **NoSQL Databases** like MongoDB
+- **Flat Files** for small, static data
 
-## Step 2: Fetch Data with JavaScript
-In your HTML file, add a `<script>` tag to retrieve and display the data:
-```html
-<script>
-  fetch('/api/data')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('output').textContent = 
-        `Name: ${data.name}, Score: ${data.score}`;
-    });
-</script>
+Flask and Spring are **backend frameworks** that help your app interact with these storage systems — they’re not databases themselves.
 
-<div id="output"></div>
-```
+{%- include tailwind/infograph.html -%}
 
-## Step 3: Run and View Locally
+> Click a card above to dive deeper into each setup and complete your storage foundation.
 
-- Make sure your backend server is running
-- Open your HTML page in the browser
-- You should see live data populated from the backend
+---
 
-> This is full-stack in action: data retrieved by the backend is shown through the frontend.
+## Step 3: Deployment Considerations
 
-## Step 4: Build On It
+Deployment is typically undertaken once your database schema and frontend pages are synced effectively (after extensive testing). Deployment helps anyone on the internet access your project, since your local code is only present on your device. 
 
-Now that you're retrieving data:
-- Build a form that saves data to the backend
-- Add a leaderboard or profile dashboard
-- Use buttons or dropdowns to query and filter data
-- Secure routes using authentication later on
+When deploying, keep in mind:
+- **Local files/databases may not persist** on cloud platforms
+- Secure your database credentials with environment variables
+- Test your endpoints using tools like Postman or the browser
 
-## Step 5: Deployment Tips
+---
 
-When deploying:
+## What’s Next?
 
-- Host your frontend and backend together (or connect across domains)
-- Make sure API URLs are correct (e.g., `/api/data`)
-- Test both local and production behavior with tools like Postman
+Once you've completed your storage setup:
+- Start building a website and use a backend to store data (like users, comments, or posts for a social media site)
+- Begin developing your own APIs in Python or Java
+- Connect your frontend to live data using `fetch`
 
-## Summary
-
-Data retrieval is the bridge between user interfaces and databases.
-
-You now know how to:
-
-- Build backend API routes
-- Connect your frontend using fetch()
-- Display data dynamically on your site
-
-> Next: use this foundation to build interactive dashboards, user profiles, or game scoreboards!
+> These storage foundations will help you effectively manage data in your future projects!
