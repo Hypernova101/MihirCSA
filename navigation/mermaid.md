@@ -6,6 +6,8 @@ permalink: /mermaid/tictactoe/
 toc: false
 ---
 
+# Tic Tac Toe Game Flowchart Example
+
 ```mermaid
 flowchart TD
     A[Start Game in Notebook] --> B[Display Empty Board]
